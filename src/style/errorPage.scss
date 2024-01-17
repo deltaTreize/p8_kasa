@@ -1,0 +1,29 @@
+@use 'global';
+
+.container_error{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 113px;
+  h1{
+    height: 99px;
+    width: 198px;
+    font-size: 96px;
+    font-weight: 700;
+    color: global.$primary-color;
+    margin-top: 113px;
+    text-align: center;
+  }
+  h3{
+    font-size: 18px;
+    color: global.$primary-color;
+    text-align: center;
+  }
+  a{
+    font-size: 14px;
+    color: global.$primary-color;
+    margin-bottom: 48px;
+  }
+}
