@@ -27,12 +27,14 @@
 }
 li{
   list-style: none;
-  background: global.$background-color;
   color: global.$primary-color;
-  padding: 20px;
-  padding-bottom: 0;
 }
 ul{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: global.$background-color;
+  padding: 20px;
   box-sizing: border-box;
 }
 }

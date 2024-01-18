@@ -176,12 +176,14 @@
 }
 .collapse li {
   list-style: none;
-  background: #F6F6F6;
   color: #FF6060;
-  padding: 20px;
-  padding-bottom: 0;
 }
 .collapse ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: #F6F6F6;
+  padding: 20px;
   box-sizing: border-box;
 }
 
@@ -194,6 +196,85 @@
   margin-top: 19px;
   margin-bottom: 19px;
   gap: 20px;
+}
+
+.container_Location {
+  margin: 0px 20px;
+  margin-top: 27px;
+}
+
+.info_Location .name_Location {
+  color: #FF6060;
+  font-size: 18px;
+}
+.info_Location .localisation_Location {
+  color: #FF6060;
+  font-size: 14px;
+}
+
+.tags_Location ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.tags_Location ul .tag_Location {
+  list-style: none;
+  padding: 5px;
+  height: 18px;
+  background-color: #FF6060;
+  color: #ffffff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.info_Location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info_Location .host_info_Location {
+  display: flex;
+  color: #FF6060;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 13px;
+}
+.info_Location .host_info_Location h3 {
+  display: flex;
+  justify-content: flex-end;
+  width: 50px;
+}
+.info_Location .host_info_Location img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.menus_Location {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 27px;
+}
+
+.preview_Location {
+  width: 100%;
+  height: 255px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-size: cover;
+}
+.preview_Location button {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=App.css.map */

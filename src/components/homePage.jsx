@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ContainerImage } from "./containerImage";
 
 function Location(props) {
@@ -14,7 +15,7 @@ function Location(props) {
 export function HomePage() {
 	const [dataLoc, setDataLoc] = useState([]);
 	useEffect(() => {
-		fetch("./db.json") //import pas fetch
+		fetch("./db.json") 
 			.then((response) => response.json())
 			.then((data) => setDataLoc(data));
 	}, []);
@@ -28,12 +29,14 @@ export function HomePage() {
 			text= {"Chez vous, partout et ailleurs"}
 			/>
 			{dataLoc.map((loc) => (
+			<Link to={`/location/${loc.id}`} key={loc.id}>
 				<Location
 					title={loc.title}
 					id={loc.id}
 					image={loc.cover}
 					key={loc.id}
 				/>
+			</Link>
 			))}
 		</div>
 	);
