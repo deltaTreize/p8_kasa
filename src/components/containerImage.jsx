@@ -1,8 +1,8 @@
-export function ContainerImage() {
+export function ContainerImage(props) {
 	return (
-		<div className="preview">
+		<div className={props.name}>
 			<div className="black-background">
-				<p>Chez vous, partout et ailleurs</p>
+				<p>{props.text}</p>
 			</div>
 		</div>
 	);

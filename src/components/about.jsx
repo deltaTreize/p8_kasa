@@ -1,27 +1,28 @@
-export function About (){
+import { useEffect, useState } from "react";
+import { Collapse } from "./collapse";
+import { ContainerImage } from "./containerImage";
 
-  return <>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    <div> a propos</div>
-    </>
+export function About (){
+  const [dataLoc, setDataLoc] = useState([]);
+
+
+	useEffect(() => {
+		fetch(`./aboutText.json`)
+			.then((response) => response.json())
+			.then((data) => setDataLoc(data));
+	}, []);
+	if (dataLoc.length < 0) {
+		return <>chargement</>;
+	}
+
+  return <div className="container_about">
+    <ContainerImage name={"preview about"}/>
+  			{dataLoc.map((loc) => (
+  <Collapse 
+  title= {loc.title}
+  value= {loc.text}
+  key= {loc.title}
+  />
+        ))}
+    </div>
 }

@@ -1,0 +1,12 @@
+@use 'global';
+
+.container_about{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0px 20px;
+  margin-top: 19px;
+  margin-bottom: 19px;
+  gap: 20px;
+}

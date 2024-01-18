@@ -1,0 +1,38 @@
+@use 'global';
+
+.collapse{
+.collapse_title{
+  background-color: global.$primary-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  height: 30px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 13px;
+}
+.hidden{
+  display: none;
+}
+.fa-chevron-up.rotated{
+  transition: all 0.5s;
+  transform: rotate(180deg);
+}
+.fa-chevron-up{
+  transition: all 0.5s;
+  transform: rotate(0deg);
+  cursor: pointer;
+}
+li{
+  list-style: none;
+  background: global.$background-color;
+  color: global.$primary-color;
+  padding: 20px;
+  padding-bottom: 0;
+}
+ul{
+  box-sizing: border-box;
+}
+}

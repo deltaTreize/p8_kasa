@@ -23,12 +23,15 @@ export function HomePage() {
 	}
 	return (
 		<div className="container_home">
-			<ContainerImage />
+			<ContainerImage 
+			name={"preview home"}
+			text= {"Chez vous, partout et ailleurs"}
+			/>
 			{dataLoc.map((loc) => (
 				<Location
 					title={loc.title}
 					id={loc.id}
-					image={loc.pictures[0]}
+					image={loc.cover}
 					key={loc.id}
 				/>
 			))}
