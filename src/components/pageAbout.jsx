@@ -1,19 +1,14 @@
 import { useEffect, useState } from "react";
 import { Collapse } from "./collapse";
-import { ContainerImage } from "./containerImage";
+import { ContainerImage } from "./view_image";
+import aboutText from "../aboutPage_Text.json";
 
 export function About (){
   const [dataLoc, setDataLoc] = useState([]);
-
-
+  
 	useEffect(() => {
-		fetch(`./aboutText.json`)
-			.then((response) => response.json())
-			.then((data) => setDataLoc(data));
-	}, []);
-	if (dataLoc.length < 0) {
-		return <>chargement</>;
-	}
+    setDataLoc(aboutText)
+	}, [dataLoc]);
 
   return <div className="container_about">
     <ContainerImage name={"preview about"}/>

@@ -10,9 +10,17 @@
   box-sizing: border-box;
   padding: 0px 20px;
   margin-top: 20px;
+  @media ( min-width: 780px ) {
+    max-width: 1240px;
+    margin-top: 45px;
+    height: 68px;
+  }
   img{
     max-height: 100%;
     width: 39%;
+    @media ( min-width: 780px ) {
+      max-width: 210px;
+    }
   }
   .navbar{
     display: flex;
@@ -27,6 +35,10 @@
       text-decoration: none;
       color: global.$primary-color;
       font-size: 12px;
+      @media ( min-width: 780px ) {
+       font-size: 24px;
+      }
+    
     }
     a:hover{
       text-decoration: underline;
