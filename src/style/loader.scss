@@ -1,0 +1,27 @@
+@use 'global';
+
+.spinner_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 150px 0px;
+  #spinner {
+    display: flex;
+    background: #ffffff;
+    height: 100px;
+    width: 100px;
+    border: 7px solid #fff8f8;
+    border-top:7px solid global.$primary-color;
+    border-radius: 100px;
+    left: 50%;
+    top: 50%;
+    transform: translate(50% 50%);
+    animation: rotate 1.5s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
