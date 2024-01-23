@@ -6,26 +6,24 @@ import { PreviewLocation } from "./location_Preview";
 import { Loader } from "./loader";
 
 export function Location() {
-	const [Loc, setLoc] = useState([]);
-	const [loading, setLoading] = useState(true);
+	const [Loc, setloc] = useState([]);
 	const { targetId } = useParams();
 
 	useEffect(() => {
 		fetch("../db.json")
 			.then((response) => response.json())
 			.then((data) => {
-				setLoc(data);
-				setLoading(false);
+				setloc(data);
 			});
 	}, []);
-
+	
 	function idFinding(loc) {
 		return loc.id === targetId;
 	}
 
 	const target = Loc.find(idFinding);
 
-	if (loading === true) {
+	if (Loc.length === 0) {
 		return <Loader />;
 	}
 	return (

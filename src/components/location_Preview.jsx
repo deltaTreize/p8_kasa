@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 let i = 0;
 
 export function PreviewLocation(props) {
-	const [background, setBackground] = useState([]);
+	const [background, setbackground] = useState([]);
 	useEffect(() => {
-		setBackground(props.images[0]);
+		setbackground(props.images[0]);
 		i = 0;
 	}, []);
 
@@ -16,7 +16,7 @@ export function PreviewLocation(props) {
 		if (i < 0) {
 			i = props.images.length - 1;
 		}
-		setBackground(props.images[i]);
+		setbackground(props.images[i]);
 	}
 
 	if (props.images.length === 1) {

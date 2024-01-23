@@ -8,16 +8,16 @@ export function Stars(props) {
 
 	return (
 		<>
-			{redStars.slice(5 - props.nb).map((redStars) => {
+			{redStars.slice(5 - props.nb).map((redStars, index) => {
 				return (
-					<span key={Math.floor(Math.random() * 10000)}>
+					<span key={index}>
 						{redStars}
 					</span>
 				);
 			})}
-			{greyStars.slice(props.nb).map((greyStars) => {
+			{greyStars.slice(props.nb).map((greyStars, index) => {
 				return (
-					<span key={Math.floor(Math.random() * 10000)}>
+					<span key={index}>
 						{greyStars}
 					</span>
 				);

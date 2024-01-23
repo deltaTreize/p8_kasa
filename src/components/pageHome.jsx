@@ -2,35 +2,21 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ContainerImage } from "./view_image";
 import { Loader } from "./loader";
+import { Location } from "./pageHome_creatingLocation";
 
-
-function Location(props) {
-	return (
-		<>
-			<div
-				id={props.id}
-				className="location_home"
-				style={{ backgroundImage: `url(${props.image})` }}
-			>
-				<h3>{props.title}</h3>
-			</div>
-		</>
-	);
-}
 
 export function HomePage() {
-	const [dataLoc, setDataLoc] = useState([]);
-	const [loading, setLoading] = useState(true);
+	const [dataLoc, setdataLoc] = useState([]);
 
 	useEffect(() => {
 		fetch("./db.json")
 			.then((response) => response.json())
 			.then((data) => {
-				setDataLoc(data);
-				setLoading(false);
+				setdataLoc(data);
 			});
 	}, []);
-	if (loading === true) {
+
+	if (dataLoc.length === 0) {
 		return <Loader />;
 	}
 	return (

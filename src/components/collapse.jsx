@@ -1,20 +1,20 @@
 import { useState } from "react";
 
 export function Collapse(props) {
-	const [isToggled, setToggle] = useState(false);
-	const [isHidden, setHidden] = useState("hidden");
-	const [isRotated, setRotate] = useState("fa-solid fa-chevron-up");
-	const [valueArray, setValueArray] = useState([]);
+	const [isToggled, settoggle] = useState(false);
+	const [isHidden, sethidden] = useState("hidden");
+	const [isRotated, setrotate] = useState("fa-solid fa-chevron-up");
+	const [valueArray, setvalueArray] = useState([]);
 
 	function handleToggle() {
-		setToggle(!isToggled);
-		setHidden(isHidden === "hidden" ? "show" : "hidden");
-		setRotate(
+		settoggle(!isToggled);
+		sethidden(isHidden === "hidden" ? "show" : "hidden");
+		setrotate(
 			isRotated === "fa-solid fa-chevron-up"
 				? "fa-solid fa-chevron-up rotated"
 				: "fa-solid fa-chevron-up"
 		);
-		setValueArray(props.value);
+		setvalueArray(props.value);
 	}
 	
 
