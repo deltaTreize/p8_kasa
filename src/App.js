@@ -8,28 +8,6 @@ import React from "react";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 
-// const router = createBrowserRouter([
-// 	{
-// 		path: "/",
-// 		element: <Root />,
-// 		errorElement: <ErrorPage />,
-// 		children: [
-// 			{
-// 				path: "/homePage",
-// 				element: <HomePage />,
-// 			},
-// 			{
-// 				path: "/about",
-// 				element: <About />,
-// 			},
-// 			{
-// 				path: "/location/:targetId",
-// 				element: <Location />,
-// 			},
-// 		],
-// 	},
-// ]);
-
 function App() {
 	return (
 		<React.StrictMode>
