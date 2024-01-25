@@ -1,35 +1,50 @@
-import { createBrowserRouter,  RouterProvider } from "react-router-dom";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import { HomePage } from "./components/pageHome";
 import { Location } from "./components/pageLocation";
 import { ErrorPage } from "./components/pageError";
-import { Root } from "./components/root";
 import { About } from "./components/pageAbout";
 import "./style/App.css";
+import React from "react";
+import { Footer } from "./components/footer";
+import { Header } from "./components/header";
 
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <Root />,
-		errorElement: <ErrorPage />,
-		children: [
-      {
-        path: "/homePage",
-        element: <HomePage />
-      },
-			{
-				path: "/about",
-				element: <About />,
-			},
-			{
-				path: "/location/:targetId",
-				element: <Location />,
-			},
-		],
-	},
-]);
+// const router = createBrowserRouter([
+// 	{
+// 		path: "/",
+// 		element: <Root />,
+// 		errorElement: <ErrorPage />,
+// 		children: [
+// 			{
+// 				path: "/homePage",
+// 				element: <HomePage />,
+// 			},
+// 			{
+// 				path: "/about",
+// 				element: <About />,
+// 			},
+// 			{
+// 				path: "/location/:targetId",
+// 				element: <Location />,
+// 			},
+// 		],
+// 	},
+// ]);
 
 function App() {
-	return <RouterProvider router={router}/>
+	return (
+		<React.StrictMode>
+			<Router>
+				<Header/>
+				<Routes>
+					<Route path="/" element={<HomePage />}/>
+					<Route path="/about" element={<About />}/>
+					<Route path="/location/:targetId" element={<Location />}/>
+					<Route path="*" element={<ErrorPage />}/>
+				</Routes>
+				<Footer/>
+			</Router>
+		</React.StrictMode>
+	);
 }
 
 export default App;

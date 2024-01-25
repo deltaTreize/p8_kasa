@@ -6,13 +6,13 @@ import { Location } from "./pageHome_creatingLocation";
 
 
 export function HomePage() {
-	const [dataLoc, setdataLoc] = useState([]);
+	const [dataLoc, setDataLoc] = useState([]);
 
 	useEffect(() => {
 		fetch("./db.json")
 			.then((response) => response.json())
 			.then((data) => {
-				setdataLoc(data);
+				setDataLoc(data);
 			});
 	}, []);
 

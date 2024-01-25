@@ -4,27 +4,28 @@ import { Stars } from "./star";
 import { Collapse } from "./collapse";
 import { PreviewLocation } from "./location_Preview";
 import { Loader } from "./loader";
+import { ErrorPage } from "./pageError";
+
 
 export function Location() {
-	const [Loc, setloc] = useState([]);
+	const [loc, setLoc] = useState([]);
 	const { targetId } = useParams();
 
 	useEffect(() => {
 		fetch("../db.json")
 			.then((response) => response.json())
 			.then((data) => {
-				setloc(data);
+				setLoc(data);
 			});
 	}, []);
 	
-	function idFinding(loc) {
-		return loc.id === targetId;
-	}
-
-	const target = Loc.find(idFinding);
-
-	if (Loc.length === 0) {
+	const target = loc.length ? loc.find((location)=> location.id === targetId) : null;
+	
+	if (target === null) {
 		return <Loader />;
+	}
+	if (target === undefined) {
+		return <ErrorPage />
 	}
 	return (
 		<div className="container_Location">

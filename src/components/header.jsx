@@ -5,7 +5,7 @@ export function Header() {
 				<div className="header">
 					<img src="../../asset/kasa-logo.png" alt="logo de kasa" />
 					<nav className="navbar">
-							<NavLink to={"/homePage"}>ACCUEIL</NavLink>
+							<NavLink to={"/"}>ACCUEIL</NavLink>
 							<NavLink to={"/about"}>A PROPOS</NavLink>
 					</nav>
 				</div>

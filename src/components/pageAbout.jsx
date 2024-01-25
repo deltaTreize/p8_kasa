@@ -4,10 +4,10 @@ import { ContainerImage } from "./view_image";
 import aboutText from "../aboutPage_Text.json";
 
 export function About (){
-  const [dataLoc, setdataLoc] = useState([]);
+  const [dataLoc, setDataLoc] = useState([]);
   
 	useEffect(() => {
-    setdataLoc(aboutText)
+    setDataLoc(aboutText)
 	}, [dataLoc]);
 
   return <div className="container_about">
