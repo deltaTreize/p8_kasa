@@ -7,7 +7,7 @@ import { Loader } from "./loader";
 import { ErrorPage } from "./pageError";
 
 
-export function Location() {
+export function PageLocation() {
 	const [loc, setLoc] = useState([]);
 	const { targetId } = useParams();
 

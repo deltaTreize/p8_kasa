@@ -14,25 +14,26 @@
     border-radius: 25px;
     gap: 50px;
 	}
-	a {
+	.location_home{
+		border-radius: 10px;
+		background-size: cover;
 		position: relative;
 		width: 100%;
 		height: 255px;
 		@media (min-width: 780px) {
-      width: 28%;
+			width: 28%;
 		}
-    .location_home{
-      border-radius: 10px;
-      background-size: cover;
-      width: 100%;
-      height: 100%;
-    }
-		h3 {
-			position: absolute;
-			bottom: 0;
-			left: 20px;
-			margin-bottom: 15px;
-			color: #ffffff;
-		}
+			a {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+			h3 {
+				position: absolute;
+				bottom: 0;
+				left: 20px;
+				margin-bottom: 15px;
+				color: #ffffff;
+			}
 	}
 }

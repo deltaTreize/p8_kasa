@@ -1,12 +1,15 @@
-export function Location(props) {
+import { Link } from "react-router-dom";
+
+export function Location({title, image, id}) {
 	return (
 		<>
 			<div
-				id={props.id}
+				id={id}
 				className="location_home"
-				style={{ backgroundImage: `url(${props.image})` }}
+				style={{ backgroundImage: `url(${image})` }}
 			>
-				<h3>{props.title}</h3>
+				<h3>{title}</h3>
+				<Link to={`/location/${id}`} key={id}></Link>
 			</div>
 		</>
 	);

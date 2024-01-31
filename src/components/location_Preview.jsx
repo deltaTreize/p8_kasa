@@ -1,32 +1,32 @@
 import { useEffect, useState } from "react";
 let i = 0;
 
-export function PreviewLocation(props) {
+export function PreviewLocation({images}) {
 	const [background, setBackground] = useState([]);
 	useEffect(() => {
-		setBackground(props.images[0]);
+		setBackground(images[0]);
 		i = 0;
 	}, []);
 
 	function HandleChangeArrow(arg) {
 		i = i + arg;
-		if (i >= props.images.length) {
+		if (i >= images.length) {
 			i = 0;
 		}
 		if (i < 0) {
-			i = props.images.length - 1;
+			i = images.length - 1;
 		}
-		setBackground(props.images[i]);
+		setBackground(images[i]);
 	}
 
-	if (props.images.length === 1) {
+	if (images.length === 1) {
 		return (
 			<div
 				className="preview_Location"
 				style={{ backgroundImage: `url(${background})` }}
 			>
 				<p className="picture_counter">
-					{i + 1} / {props.images.length}
+					{i + 1} / {images.length}
 				</p>
 			</div>
 		);
@@ -58,7 +58,7 @@ export function PreviewLocation(props) {
 				></i>
 			</button>
 			<p className="picture_counter">
-				{i + 1} / {props.images.length}
+				{i + 1} / {images.length}
 			</p>
 		</div>
 	);

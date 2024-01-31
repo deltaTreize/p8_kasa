@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { ContainerImage } from "./view_image";
 import { Loader } from "./loader";
 import { Location } from "./pageHome_creatingLocation";
@@ -27,14 +26,12 @@ export function HomePage() {
 			/>
 			<div className="container_location">
 				{dataLoc.map((loc) => (
-					<Link to={`/location/${loc.id}`} key={loc.id}>
-						<Location
+					<Location
 							title={loc.title}
 							id={loc.id}
 							image={loc.cover}
 							key={loc.id}
 						/>
-					</Link>
 				))}
 			</div>
 		</div>

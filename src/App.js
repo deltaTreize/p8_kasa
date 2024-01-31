@@ -1,6 +1,6 @@
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import { HomePage } from "./components/pageHome";
-import { Location } from "./components/pageLocation";
+import { PageLocation } from "./components/pageLocation";
 import { ErrorPage } from "./components/pageError";
 import { About } from "./components/pageAbout";
 import "./style/App.css";
@@ -16,7 +16,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<HomePage />}/>
 					<Route path="/about" element={<About />}/>
-					<Route path="/location/:targetId" element={<Location />}/>
+					<Route path="/location/:targetId" element={<PageLocation />}/>
 					<Route path="*" element={<ErrorPage />}/>
 				</Routes>
 				<Footer/>
